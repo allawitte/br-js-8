@@ -6,10 +6,10 @@ for (let i = 0; i < headers.length; i++) {
 }
 
 function handleTableClick(event) {
-    let field = event.target.dataset['propName'];
+    let field = event.target.dataset.propName;
     event.stopPropagation();
-    let direction = event.target.dataset['dir'] ? -1*event.target.dataset['dir'] : 1;
-    event.target.dataset['dir'] = direction;
+    let direction = event.target.dataset.dir ? -1*event.target.dataset.dir : 1;
+    event.target.dataset.dir = direction;
     table.setAttribute('data-sort-by', field);
     sortTable(field, direction)
 }

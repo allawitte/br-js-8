@@ -1,14 +1,14 @@
 'use strict';
+let itemsBlock = document.querySelector('.items-list');
 subscribeItems();
 showMore.addEventListener('click', subscribeItems);
 
-function subscribeItems(){
-    let addBtns = document.querySelectorAll('.items-list .add-to-cart');
-    Array.from(addBtns).forEach(item => {
-        item.addEventListener('click', handleClick)
-    });
+function subscribeItems() {
+    itemsBlock.addEventListener('click', handleClick);
 }
 
-function handleClick(event){
-    addToCart(event.target.dataset);
+function handleClick(event) {
+    if (event.target.tagName == 'A' && event.target.className == 'add-to-cart') {
+        addToCart(event.target.dataset);
+    }
 }
